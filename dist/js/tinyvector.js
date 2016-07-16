@@ -1,5 +1,14 @@
+/*!
+ * Random JavaScript Library v1.0.0
+ * Jeremy Zevin
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ * Date: 7/8/16
+ *
+ */
 "use strict";
-//foo
 var TinyVector = (function () {
     function TinyVector(x, y) {
         if (x === void 0) { x = 0; }
@@ -55,26 +64,12 @@ var TinyVector = (function () {
     TinyVector.prototype.rotateDeg = function (angle) {
         return this.rotate(this._degrees2radian(angle));
     };
-    TinyVector.prototype.inside = function (x, y, w, h) {
-        if (this.x > x || this.x < w || this.y > y || this.y < h) {
-            return true;
-        }
-        return false;
-    };
-    TinyVector.prototype.outside = function (x, y, w, h) {
-        if (this.x < x || this.x > w || this.y < y || this.y > h) {
-            return true;
-        }
-        return false;
-    };
     TinyVector.prototype._radian2degrees = function (rad) {
         return rad * (180 / Math.PI);
     };
-    ;
     TinyVector.prototype._degrees2radian = function (deg) {
         return deg / (180 / Math.PI);
     };
-    ;
     return TinyVector;
 }());
 module.exports = TinyVector;

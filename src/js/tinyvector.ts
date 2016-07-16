@@ -1,4 +1,15 @@
-//foo
+
+/*!
+ * Random JavaScript Library v1.0.0
+ * Jeremy Zevin
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ * Date: 7/8/16
+ *
+ */
+
 class TinyVector {
   x: number;
   y: number;
@@ -53,25 +64,12 @@ class TinyVector {
   rotateDeg(angle:number){
     return this.rotate(this._degrees2radian(angle));
   }
-  inside(x, y, w, h){
-    if (this.x > x || this.x < w || this.y > y || this.y < h) {
-        return true;
-    }
-    return false;
-  }
-  outside(x, y, w, h){
-    if (this.x < x || this.x > w || this.y < y || this.y > h) {
-        return true;
-    }
-    return false;
-  }
-
 
   private _radian2degrees (rad:number) {
       return rad * (180 / Math.PI);
-  };
+  }
   private _degrees2radian(deg:number) {
       return deg / (180 / Math.PI);
-  };
+  }
 }
 export = TinyVector;
