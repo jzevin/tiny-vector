@@ -1,11 +1,11 @@
 /*!
- * Random JavaScript Library v1.0.0
+ * tinyvector 2D JavaScript Lib
  * Jeremy Zevin
  *
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 7/8/16
+ * Date: 7/16/16
  *
  */
 "use strict";
