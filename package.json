@@ -1,0 +1,36 @@
+{
+  "name": "tiny-vector",
+  "version": "0.0.0",
+  "description": "tiny javascript 2D vector math class ",
+  "main": "dist/tinyvector.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillyDesignr/tiny-vector.git"
+  },
+  "keywords": [
+    "javascript",
+    "vector"
+  ],
+  "author": "Jeremy Zevin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phillyDesignr/tiny-vector/issues"
+  },
+  "homepage": "https://github.com/phillyDesignr/tiny-vector#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify": "0.0.12",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^2.13.6",
+    "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1",
+    "http-server": "^0.9.0",
+    "mocha": "^2.5.3",
+    "stream-combiner2": "^1.1.1"
+  }
+}
