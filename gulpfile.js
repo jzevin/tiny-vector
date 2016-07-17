@@ -1,11 +1,11 @@
-var gulp = require('gulp'),
-    combiner = require('stream-combiner2'),
+var gulp       = require('gulp'),
+    combiner   = require('stream-combiner2'),
     typescript = require('gulp-typescript'),
-    minifyJs = require('gulp-minify'),
-    rename = require('gulp-rename'),
-    gutil = require('gulp-util');
-    webserver = require('gulp-webserver'),
-    jade = require('gulp-jade');
+    minifyJs   = require('gulp-minify'),
+    rename     = require('gulp-rename'),
+    gutil      = require('gulp-util');
+    webserver  = require('gulp-webserver'),
+    jade       = require('gulp-jade');
 
 gulp.task('serv', function() {
   gulp.src('./')

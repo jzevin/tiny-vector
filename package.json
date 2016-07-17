@@ -31,6 +31,9 @@
     "gulp-webserver": "^0.9.1",
     "http-server": "^0.9.0",
     "mocha": "^2.5.3",
-    "stream-combiner2": "^1.1.1"
+    "stream-combiner2": "^1.1.1",
+    "tiny-random": "^1.4.4",
+    "webpack": "^1.13.1",
+    "webpack-typescript": "^0.5.6"
   }
 }
