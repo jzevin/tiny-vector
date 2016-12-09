@@ -5,7 +5,7 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 7/16/16
+ * Date: 12/9/16
  *
  */
 "use strict";
@@ -26,23 +26,35 @@ var TinyVector = (function () {
         this.y -= tv.y;
         return this;
     };
-    TinyVector.prototype.mul = function (tv) {
-        this.x *= tv.x;
-        this.y *= tv.y;
+    TinyVector.prototype.mult = function (n) {
+        this.x *= n;
+        this.y *= n;
         return this;
     };
-    TinyVector.prototype.div = function (tv) {
-        this.x /= tv.x;
-        this.y /= tv.y;
+    TinyVector.prototype.div = function (n) {
+        this.x /= n;
+        this.y /= n;
         return this;
     };
-    TinyVector.prototype.limit = function (max) {
-        if (max === void 0) { max = 1; }
-        if (this.x > max) {
-            this.x = max;
+    TinyVector.prototype.mag = function () {
+        return Math.sqrt((this.x * this.x) + (this.y * this.y));
+    };
+    TinyVector.prototype.normalize = function () {
+        var m = this.mag();
+        if (m !== 0) {
+            this.div(m);
         }
-        if (this.y > max) {
-            this.y = max;
+        return this;
+    };
+    TinyVector.prototype.limit = function (h, l) {
+        var high = h || null, low = l || null;
+        if (high && this.mag() > high) {
+            this.normalize();
+            this.mult(high);
+        }
+        if (low && this.mag() < low) {
+            this.normalize();
+            this.mult(low);
         }
         return this;
     };

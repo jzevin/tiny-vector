@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 7/16/16
+ * Date: 12/9/16
  *
  */
 
@@ -27,22 +27,36 @@ class TinyVector {
     this.y -= tv.y;
     return this;
   }
-  mul(tv:TinyVector){
-    this.x *= tv.x;
-    this.y *= tv.y;
+  mult(n){
+    this.x *= n;
+    this.y *= n;
     return this;
   }
-  div(tv:TinyVector){
-    this.x /= tv.x;
-    this.y /= tv.y;
+  div(n){
+    this.x /= n;
+    this.y /= n;
     return this;
   }
-  limit( max:number = 1 ){
-    if (this.x > max) {
-        this.x = max;
+  mag(){
+    return Math.sqrt((this.x * this.x) + (this.y * this.y));
+  }
+  normalize(){
+    const m = this.mag();
+    if (m !== 0) {
+      this.div(m);
     }
-    if (this.y > max) {
-        this.y = max;
+    return this;
+  }
+  limit(h, l) {
+    const high = h || null,
+        low = l || null;
+    if (high && this.mag() > high) {
+      this.normalize();
+      this.mult(high);
+    }
+    if (low && this.mag() < low) {
+      this.normalize();
+      this.mult(low);
     }
     return this;
   }
