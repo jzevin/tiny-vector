@@ -1,6 +1,6 @@
 var assert = require('chai').assert;
 var expect = require('chai').expect;
-var TinyVector = require('../dist/js/tinyvector.js');
+var TinyVector = require('../dist/tinyvector.js');
 
 var tinyvector = new TinyVector();
 
