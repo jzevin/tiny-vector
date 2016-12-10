@@ -25,7 +25,7 @@ gulp.task('typescript', function() {
   var combined = combiner.obj([
     gulp.src('./src/js/tinyvector.ts'),
     typescript(),
-    gulp.dest('./dist/js/'),
+    gulp.dest('./dist/'),
     minifyJs({
       ext : {
         min: '.min.js'
@@ -33,7 +33,7 @@ gulp.task('typescript', function() {
       preserveComments: 'some'
     }),
     //rename({extname: '.min.js'}),
-    gulp.dest('./dist/js/')
+    gulp.dest('./dist/')
   ]);
   combined.on( 'error', gutil.log);
   return combined;
