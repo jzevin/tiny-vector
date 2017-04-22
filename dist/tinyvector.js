@@ -8,7 +8,6 @@
  * Date: 4/22/17
  *
  */
-"use strict";
 var TinyVector = (function () {
     function TinyVector(x, y) {
         if (x === void 0) { x = 0; }
@@ -97,4 +96,3 @@ else {
         window['TinyVector'] = TinyVector;
     }
 }
-module.exports = TinyVector;
