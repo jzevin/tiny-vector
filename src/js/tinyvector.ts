@@ -86,7 +86,6 @@ class TinyVector {
       return deg / (180 / Math.PI);
   }
 }
-export = TinyVector;
 
 declare var define: any;
 declare var module: any;
