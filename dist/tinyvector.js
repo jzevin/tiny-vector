@@ -5,7 +5,7 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 12/9/16
+ * Date: 4/22/17
  *
  */
 "use strict";
@@ -84,4 +84,17 @@ var TinyVector = (function () {
     };
     return TinyVector;
 }());
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+    module.exports = TinyVector;
+}
+else {
+    if (typeof define === 'function' && define.amd) {
+        define([], function () {
+            return TinyVector;
+        });
+    }
+    else {
+        window['TinyVector'] = TinyVector;
+    }
+}
 module.exports = TinyVector;

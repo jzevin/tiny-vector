@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 12/9/16
+ * Date: 4/22/17
  *
  */
 
@@ -87,3 +87,20 @@ class TinyVector {
   }
 }
 export = TinyVector;
+
+declare var define: any;
+declare var module: any;
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+   module.exports = TinyVector;
+ }
+ else {
+   if (typeof define === 'function' && define.amd) {
+     define([], function() {
+       return TinyVector;
+     });
+   }
+   else {
+     (window as any)['TinyVector'] = TinyVector;
+   }
+ }
