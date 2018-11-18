@@ -1,7 +1,5 @@
-var assert = require('chai').assert;
-var expect = require('chai').expect;
-var TinyVector = require('../dist/tinyvector.js');
-
+import {assert, expect} from 'chai';
+import { TinyVector } from '../src/tinyvector';
 var tinyvector = new TinyVector();
 
 describe('TinyVector', function() {

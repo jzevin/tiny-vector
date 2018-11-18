@@ -6,11 +6,11 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 4/22/17
+ * Date: 11/18/18
  *
  */
 
-class TinyVector {
+export class TinyVector {
   x: number;
   y: number;
   constructor( x:number = 0, y:number = 0 ){
@@ -86,20 +86,3 @@ class TinyVector {
       return deg / (180 / Math.PI);
   }
 }
-
-declare var define: any;
-declare var module: any;
-
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-   module.exports = TinyVector;
- }
- else {
-   if (typeof define === 'function' && define.amd) {
-     define([], function() {
-       return TinyVector;
-     });
-   }
-   else {
-     (window as any)['TinyVector'] = TinyVector;
-   }
- }

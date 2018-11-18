@@ -4,7 +4,10 @@
   "description": "tiny javascript 2D vector math class ",
   "main": "dist/tinyvector.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha"
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "testWithCoverage": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.test.ts && nyc report",
+    "dev": "tsc",
+    "build": "tsc && uglifyjs dist/TinyVector.js -o dist/TinyVector.min.js --comments '/^!/'"
   },
   "repository": {
     "type": "git",
@@ -21,19 +24,13 @@
   },
   "homepage": "https://github.com/phillyDesignr/tiny-vector#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "gulp": "^3.9.1",
-    "gulp-jade": "^1.1.0",
-    "gulp-minify": "0.0.12",
-    "gulp-rename": "^1.2.2",
-    "gulp-typescript": "^2.13.6",
-    "gulp-util": "^3.0.7",
-    "gulp-webserver": "^0.9.1",
-    "http-server": "^0.9.0",
-    "mocha": "^2.5.3",
-    "stream-combiner2": "^1.1.1",
-    "tiny-random": "^1.4.4",
-    "webpack": "^1.13.1",
-    "webpack-typescript": "^0.5.6"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "uglify-js": "^3.4.9"
   }
 }

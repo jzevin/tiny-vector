@@ -1,3 +1,4 @@
+"use strict";
 /*!
  * tinyvector 2D JavaScript Lib
  * Jeremy Zevin
@@ -5,10 +6,11 @@
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
- * Date: 4/22/17
+ * Date: 11/18/18
  *
  */
-var TinyVector = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var TinyVector = /** @class */ (function () {
     function TinyVector(x, y) {
         if (x === void 0) { x = 0; }
         if (y === void 0) { y = 0; }
@@ -83,16 +85,5 @@ var TinyVector = (function () {
     };
     return TinyVector;
 }());
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = TinyVector;
-}
-else {
-    if (typeof define === 'function' && define.amd) {
-        define([], function () {
-            return TinyVector;
-        });
-    }
-    else {
-        window['TinyVector'] = TinyVector;
-    }
-}
+exports.TinyVector = TinyVector;
+//# sourceMappingURL=TinyVector.js.map
