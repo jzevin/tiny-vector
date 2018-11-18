@@ -1,6 +1,6 @@
 {
   "name": "tiny-vector",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "tiny javascript 2D vector math class ",
   "main": "dist/TinyVector.js",
   "scripts": {
