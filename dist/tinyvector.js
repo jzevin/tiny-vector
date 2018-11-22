@@ -74,6 +74,24 @@ var TinyVector = /** @class */ (function () {
     TinyVector.prototype.rotateDeg = function (angle) {
         return this.rotate(this._degrees2radian(angle));
     };
+    TinyVector.prototype.heading = function () {
+        return Math.atan2(this.y, this.x);
+    };
+    TinyVector.prototype.angleBetween = function (tv) {
+        var dotmagmag = this.dot(tv) / (this.mag() * tv.mag());
+        var angle = Math.acos(Math.min(1, Math.max(-1, dotmagmag)));
+        return angle;
+    };
+    TinyVector.prototype.dot = function (tv) {
+        return this.x * (tv.x || 0) + this.y * (tv.y || 0);
+    };
+    ;
+    TinyVector.prototype.lerp = function (tv, amt) {
+        this.x += (tv.x - this.x) * amt || 0;
+        this.y += (tv.y - this.y) * amt || 0;
+        return this;
+    };
+    ;
     TinyVector.prototype._radian2degrees = function (rad) {
         return rad * (180 / Math.PI);
     };

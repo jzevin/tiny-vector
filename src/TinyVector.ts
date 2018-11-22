@@ -75,6 +75,22 @@ export class TinyVector {
   rotateDeg(angle: number): TinyVector {
     return this.rotate(this._degrees2radian(angle));
   }
+  heading(): number {
+    return Math.atan2(this.y, this.x);
+  }
+  angleBetween(tv: TinyVector) {
+    var dotmagmag = this.dot(tv) / (this.mag() * tv.mag());
+    var angle = Math.acos(Math.min(1, Math.max(-1, dotmagmag)));
+    return angle;
+  }
+  dot(tv: TinyVector): number {
+    return this.x * (tv.x || 0) + this.y * (tv.y || 0);
+  };
+  lerp(tv: TinyVector, amt: number): TinyVector {
+    this.x += (tv.x - this.x) * amt || 0;
+    this.y += (tv.y - this.y) * amt || 0;
+    return this;
+  };
 
   private _radian2degrees(rad: number): number {
     return rad * (180 / Math.PI);
