@@ -82,6 +82,10 @@ var TinyVector = /** @class */ (function () {
         var angle = Math.acos(Math.min(1, Math.max(-1, dotmagmag)));
         return angle;
     };
+    TinyVector.prototype.angleTo = function (tv, angleOffset) {
+        if (angleOffset === void 0) { angleOffset = 0; }
+        return Math.atan2(tv.y - this.y, tv.x - this.x) + angleOffset;
+    };
     TinyVector.prototype.dot = function (tv) {
         return this.x * (tv.x || 0) + this.y * (tv.y || 0);
     };

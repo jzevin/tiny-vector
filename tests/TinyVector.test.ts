@@ -8,7 +8,7 @@ describe('TinyVector', function() {
     it('should be instance of TinyVector', function() {
       expect(tinyvector).to.be.instanceOf(TinyVector);
     });
-    it('should respond to add, sub, mul, div, limit, zero, copy, rotate, rotateDeg, dot, heading, angleBetween, lerp', function() {
+    it('should respond to add, sub, mul, div, limit, zero, copy, rotate, rotateDeg, dot, heading, angleBetween, lerp, angleTo', function() {
       expect(tinyvector).itself.to.respondTo('add');
       expect(tinyvector).itself.to.respondTo('sub');
       expect(tinyvector).itself.to.respondTo('mult');
@@ -22,6 +22,7 @@ describe('TinyVector', function() {
       expect(tinyvector).itself.to.respondTo('heading');
       expect(tinyvector).itself.to.respondTo('angleBetween');
       expect(tinyvector).itself.to.respondTo('lerp');
+      expect(tinyvector).itself.to.respondTo('angleTo');
       //expect(tinyvector).itself.to.respondTo('inside');
       //expect(tinyvector).itself.to.respondTo('outside');
     });

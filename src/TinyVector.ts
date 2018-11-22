@@ -83,6 +83,9 @@ export class TinyVector {
     var angle = Math.acos(Math.min(1, Math.max(-1, dotmagmag)));
     return angle;
   }
+  angleTo(tv: TinyVector, angleOffset: number=0): number{
+    return Math.atan2(tv.y - this.y, tv.x - this.x) + angleOffset;
+  }
   dot(tv: TinyVector): number {
     return this.x * (tv.x || 0) + this.y * (tv.y || 0);
   };
