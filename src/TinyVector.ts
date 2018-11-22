@@ -5,24 +5,21 @@
  *
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
- *
- * Date: 11/18/18
- *
  */
 
 export class TinyVector {
   x: number;
   y: number;
-  constructor( x:number = 0, y:number = 0 ){
+  constructor(x: number = 0, y: number = 0) {
     this.x = x;
     this.y = y;
   }
-  add(tv:TinyVector): TinyVector {
+  add(tv: TinyVector): TinyVector {
     this.x += tv.x;
     this.y += tv.y;
     return this;
   }
-  sub(tv:TinyVector): TinyVector {
+  sub(tv: TinyVector): TinyVector {
     this.x -= tv.x;
     this.y -= tv.y;
     return this;
@@ -37,7 +34,7 @@ export class TinyVector {
     this.y /= n;
     return this;
   }
-  mag(): number{
+  mag(): number {
     return Math.sqrt((this.x * this.x) + (this.y * this.y));
   }
   normalize(): TinyVector {
@@ -49,7 +46,7 @@ export class TinyVector {
   }
   limit(h, l): TinyVector {
     const high = h || null,
-        low = l || null;
+      low = l || null;
     if (high && this.mag() > high) {
       this.normalize();
       this.mult(high);
@@ -65,24 +62,24 @@ export class TinyVector {
     this.y = 0;
     return this;
   }
-  clone(): TinyVector {
-    return new TinyVector(this.x,this.y);
+  copy(): TinyVector {
+    return new TinyVector(this.x, this.y);
   }
-  rotate(angle:number): TinyVector {
+  rotate(angle: number): TinyVector {
     const nx = this.x * Math.cos(angle) - this.y * Math.sin(angle);
     const ny = this.x * Math.sin(angle) + this.y * Math.cos(angle);
     this.x = nx;
     this.y = ny;
     return this;
   }
-  rotateDeg(angle:number): TinyVector {
+  rotateDeg(angle: number): TinyVector {
     return this.rotate(this._degrees2radian(angle));
   }
 
-  private _radian2degrees (rad:number): number{
-      return rad * (180 / Math.PI);
+  private _radian2degrees(rad: number): number {
+    return rad * (180 / Math.PI);
   }
-  private _degrees2radian(deg:number): number {
-      return deg / (180 / Math.PI);
+  private _degrees2radian(deg: number): number {
+    return deg / (180 / Math.PI);
   }
 }
