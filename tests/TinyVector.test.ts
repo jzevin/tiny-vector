@@ -8,14 +8,14 @@ describe('TinyVector', function() {
     it('should be instance of TinyVector', function() {
       expect(tinyvector).to.be.instanceOf(TinyVector);
     });
-    it('should respond to add, sub, mul, div, limit, zero, clone, rotate, rotateDeg', function() {
+    it('should respond to add, sub, mul, div, limit, zero, copy, rotate, rotateDeg', function() {
       expect(tinyvector).itself.to.respondTo('add');
       expect(tinyvector).itself.to.respondTo('sub');
       expect(tinyvector).itself.to.respondTo('mult');
       expect(tinyvector).itself.to.respondTo('div');
       expect(tinyvector).itself.to.respondTo('limit');
       expect(tinyvector).itself.to.respondTo('zero');
-      expect(tinyvector).itself.to.respondTo('clone');
+      expect(tinyvector).itself.to.respondTo('copy');
       expect(tinyvector).itself.to.respondTo('rotate');
       expect(tinyvector).itself.to.respondTo('rotateDeg');
       //expect(tinyvector).itself.to.respondTo('inside');
@@ -81,10 +81,10 @@ describe('TinyVector', function() {
     });
   });
 
-  describe('#tinyvector.clone()',function(){
+  describe('#tinyvector.copy()',function(){
     it('should equal {x:20,y:50}', function() {
       var vc1 = new TinyVector(20,50);
-      var vc2 = vc1.clone();
+      var vc2 = vc1.copy();
       expect(vc2.x).to.be.equal(20);
       expect(vc2.y).to.be.equal(50);
     });

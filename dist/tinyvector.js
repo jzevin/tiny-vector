@@ -5,9 +5,6 @@
  *
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
- *
- * Date: 11/18/18
- *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var TinyVector = /** @class */ (function () {
@@ -64,7 +61,7 @@ var TinyVector = /** @class */ (function () {
         this.y = 0;
         return this;
     };
-    TinyVector.prototype.clone = function () {
+    TinyVector.prototype.copy = function () {
         return new TinyVector(this.x, this.y);
     };
     TinyVector.prototype.rotate = function (angle) {
